@@ -2,6 +2,93 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [3.1.0](https://github.com/mudrockdev/postal/compare/3.0.0...3.1.0) (2025-06-17)
+
+
+### Features
+
+* add sha256 signatures to outgoing http requests ([#2874](https://github.com/mudrockdev/postal/issues/2874)) ([96d7365](https://github.com/mudrockdev/postal/commit/96d73653d7cb4dde1fbe74ccb3596147ef8cd9ed))
+* automatically remove queued messages with stale locks ([#2872](https://github.com/mudrockdev/postal/issues/2872)) ([d84152e](https://github.com/mudrockdev/postal/commit/d84152eb5df6f963426d6ba8d02d39b3c146c8a5))
+* configurable trusted proxies for web requests ([3785c99](https://github.com/mudrockdev/postal/commit/3785c998513c634d225b489ccb43e926ce3f270a))
+* openid connect support ([#2873](https://github.com/mudrockdev/postal/issues/2873)) ([5ed94f6](https://github.com/mudrockdev/postal/commit/5ed94f6f855735aa00544b2574dfb9e65d559a38))
+* **prometheus:** add `postal_message_queue_latency` metric ([ee8d829](https://github.com/mudrockdev/postal/commit/ee8d829a854f91e476167869cafe35c2d37bb314))
+* **worker:** allow number of threads to be configured ([7e2accc](https://github.com/mudrockdev/postal/commit/7e2acccd1ebd80750a3ebdb96cb5c36b5263cc24))
+* **worker:** scale connection pool with worker threads ([ea542a0](https://github.com/mudrockdev/postal/commit/ea542a0694b3465b04fd3ebc439837df414deb1e))
+
+
+### Bug Fixes
+
+* default to listening on all addresses when using legacy config ([48f6494](https://github.com/mudrockdev/postal/commit/48f6494240eb0374d5f865425b362e6f306b2653))
+* don't override paths in dockerfile ([9399e32](https://github.com/mudrockdev/postal/commit/9399e3223467cdacd010e70b58ad6093e128213d))
+* don't use authentication on org & server deletion ([be45652](https://github.com/mudrockdev/postal/commit/be456523dd3aacb5c3eb45c9261da97ebffe603c))
+* fix `postal version` command ([4fa88ac](https://github.com/mudrockdev/postal/commit/4fa88acea0dececd0eae485506a2ad8268fbea59))
+* fix issue running message pruning task ([3a33e53](https://github.com/mudrockdev/postal/commit/3a33e53d843584757bb00898746aa059d7616db4))
+* fix issue with sending mail when smtp relays are configured ([6dd6e29](https://github.com/mudrockdev/postal/commit/6dd6e29929c70eaa8b9d3b33c184996b0b6abb82))
+* fixes `postal default-dkim-record` ([58dddeb](https://github.com/mudrockdev/postal/commit/58dddebeb81dc6fab945d2b10a91588eddc471c2))
+* **legacy-api:** allow _expansions to be provided as true to return all expansions ([39f704c](https://github.com/mudrockdev/postal/commit/39f704c256fc3e71a1dc009acc77796a1efffead)), closes [#2932](https://github.com/mudrockdev/postal/issues/2932)
+* **message-dequeuer:** ability to disable batching ([4fcb9e9](https://github.com/mudrockdev/postal/commit/4fcb9e9a2e34be5aa4bdf13f0529f40e564b72b4))
+* **message-dequeuer:** ensure SMTP endpoints are sent to SMTP sender appropriately ([e2d642c](https://github.com/mudrockdev/postal/commit/e2d642c0cbf443550886d90abc3a6edf3e4bc4fc)), closes [#2853](https://github.com/mudrockdev/postal/issues/2853)
+* oidc scopes are invalid when concatenated ([#3332](https://github.com/mudrockdev/postal/issues/3332)) ([9c5f96a](https://github.com/mudrockdev/postal/commit/9c5f96ae90cf06dcd5db776806865752f667bd95))
+* raise NotImplementedError when no call method on a scheduled task ([2b0919c](https://github.com/mudrockdev/postal/commit/2b0919c1454eabea93db96f50ecbd8e36bb89f1f))
+* **smtp-sender:** ensure relays without a host are excluded ([3a56ec8](https://github.com/mudrockdev/postal/commit/3a56ec8a74950e0162d98f1af5f58a67a82d6455))
+* **smtp-sender:** fixes `SMTPSender.smtp_relays` ([b3264b9](https://github.com/mudrockdev/postal/commit/b3264b942776e254d3c351c94c435d172a514e18))
+* **smtp-server:** add additional information to cram-md5 log entries ([9982bb8](https://github.com/mudrockdev/postal/commit/9982bb8c31ee4885d188666e2e8afdc218528df7))
+* **smtp-server:** fixes proxy protocol ([9240612](https://github.com/mudrockdev/postal/commit/92406129cfcf1a06499a6f5aa18c73f1d6195793))
+* **smtp-server:** listen on all interfaces by default ([d1e5b68](https://github.com/mudrockdev/postal/commit/d1e5b68200ea4b9710cc8714afb3271bad1f4f66)), closes [#2852](https://github.com/mudrockdev/postal/issues/2852)
+* **smtp-server:** remove ::ffff: from the start of ipv4 addresses ([0dc7359](https://github.com/mudrockdev/postal/commit/0dc7359431001c9ef1222913f8d1344093397596))
+* **smtp-server:** reset ansi sequence after logging ([9bf6152](https://github.com/mudrockdev/postal/commit/9bf6152060ffb8b611b66818c1d1ac7c929b7ffe))
+* typo in the credentials page ([fd3c7cc](https://github.com/mudrockdev/postal/commit/fd3c7ccdf6dc4ee0a76c9523cbd735159e4b8000))
+* **ui:** fixes typo on queue page ([33513a7](https://github.com/mudrockdev/postal/commit/33513a77c0df24d832ab7ed5237d68e2b1bde887))
+* **web-server:** allow for trusted proxies not be set ([4e1deb2](https://github.com/mudrockdev/postal/commit/4e1deb2d2aeb61d9dddb3729916411c94e73c1c6))
+
+
+### Styles
+
+* **rubocop:** Style/TrailingCommaInArrayLiteral ([4e13577](https://github.com/mudrockdev/postal/commit/4e13577891dc827244abc6bf6d9ab4ee45860556))
+* **rubocop:** use _ when not using a variable in helm config exporter ([2c20ba6](https://github.com/mudrockdev/postal/commit/2c20ba65f64ccb0f8174e3f523dedb3806478782))
+
+
+### Miscellaneous Chores
+
+* allow config location message to be suppressed ([f760cdb](https://github.com/mudrockdev/postal/commit/f760cdb5a1d53e9c30ee495d129cbf12603a3cbd))
+* **config-docs:** update docs for latest oidc defaults ([364eba6](https://github.com/mudrockdev/postal/commit/364eba6c5fce2f08a36489f42856ad5024a2062c))
+* **config-docs:** update proxy protocol to mention v1 ([45dd8aa](https://github.com/mudrockdev/postal/commit/45dd8aaac56f15481cb7bf9081401cb28dc1e707))
+* **container:** add the branch name to the container ([bee5098](https://github.com/mudrockdev/postal/commit/bee509832edc151d97fe5bfc48c4973452873fc8))
+* **github-actions:** don't generate commit- tags ([d65bbe0](https://github.com/mudrockdev/postal/commit/d65bbe0579037c5df962a18134bc007f5159d7e5))
+* **github-actions:** don't run for dependabot or release-please PRs and fetch whole repo ([adaf2b0](https://github.com/mudrockdev/postal/commit/adaf2b07502e9ed91290873ad8465051c6fd814f))
+* **github-actions:** include a version string on branch-*/latest images ([64bc7dc](https://github.com/mudrockdev/postal/commit/64bc7dcf7c0a8e006ab6eb6e8b4a52ad5e7e6528))
+* hide further config messages ([1c67f72](https://github.com/mudrockdev/postal/commit/1c67f72209c93404d7024ce3d15f6f54f2d707c4))
+* **main:** release 3.0.0 ([559712b](https://github.com/mudrockdev/postal/commit/559712bbe45143b7aa941f14b0cfc87c8ce9ef4e))
+* **main:** release 3.0.1 ([7fd538d](https://github.com/mudrockdev/postal/commit/7fd538d6c4a517c159f1a7bac47f5480839dc88b))
+* **main:** release 3.0.2 ([93cbe31](https://github.com/mudrockdev/postal/commit/93cbe310823aca4f4f065f5f60c4547bdde9fd16))
+* **main:** release 3.1.0 ([4acfffd](https://github.com/mudrockdev/postal/commit/4acfffd1d88e5a7beca87a0c084326392dc3e6eb))
+* **main:** release 3.1.1 ([#2859](https://github.com/mudrockdev/postal/issues/2859)) ([4c27bae](https://github.com/mudrockdev/postal/commit/4c27baee7ff554097c4a982c289dbbd4edc9db7a))
+* **main:** release 3.2.0 ([#2867](https://github.com/mudrockdev/postal/issues/2867)) ([8e71dd0](https://github.com/mudrockdev/postal/commit/8e71dd0232fbd12cbe9762877192cf0d0e37f359))
+* **main:** release 3.2.1 ([#2877](https://github.com/mudrockdev/postal/issues/2877)) ([144af20](https://github.com/mudrockdev/postal/commit/144af20b9c3b66f42d78a2d3e3b2bbdcb11a315a))
+* **main:** release 3.2.2 ([#2878](https://github.com/mudrockdev/postal/issues/2878)) ([6a1ff56](https://github.com/mudrockdev/postal/commit/6a1ff56fe269e5ace18de9fe88094a5afc87eaac))
+* **main:** release 3.3.0 ([#2887](https://github.com/mudrockdev/postal/issues/2887)) ([eded789](https://github.com/mudrockdev/postal/commit/eded789c37fd0a82056e6c1919fd808ae82154f2))
+* **main:** release 3.3.1 ([#2890](https://github.com/mudrockdev/postal/issues/2890)) ([a3fab36](https://github.com/mudrockdev/postal/commit/a3fab36da2e005fff46c0966c9b9fe7db5ee15ff))
+* **main:** release 3.3.2 ([#2892](https://github.com/mudrockdev/postal/issues/2892)) ([c12f30e](https://github.com/mudrockdev/postal/commit/c12f30e300bba70e36eb196aa63af0f02d48a0af))
+* **main:** release 3.3.3 ([#2933](https://github.com/mudrockdev/postal/issues/2933)) ([d510499](https://github.com/mudrockdev/postal/commit/d5104991903d42563c6c6f7ff01276d496e3304f))
+* **main:** release 3.3.4 ([#3014](https://github.com/mudrockdev/postal/issues/3014)) ([da90e75](https://github.com/mudrockdev/postal/commit/da90e75036c27482699921613d838f4058a100e7))
+* **main:** release 3.3.5 ([5df480a](https://github.com/mudrockdev/postal/commit/5df480a0daf6a5e02a3f2f3344adeb7b7c149c77))
+* regenerate config docs ([5d8213a](https://github.com/mudrockdev/postal/commit/5d8213a98735f07fdf1700c7d01597654f41dbd0))
+* removing arm64 support until we can get a reasonable build pipeline sorted ([e8e44f5](https://github.com/mudrockdev/postal/commit/e8e44f54b09426c8a04e466bc037851a0833d124))
+* suppress config location on default-dkim-record ([aa76aae](https://github.com/mudrockdev/postal/commit/aa76aae2322af41af1bd60cfe1d69a11ac76324e))
+* **ui:** display branch in footer if present ([1823617](https://github.com/mudrockdev/postal/commit/18236171ebc398c157f2e61b15c7df9f91205284))
+
+
+### Code Refactoring
+
+* remove moonrope but maintain legacy API actions ([#2889](https://github.com/mudrockdev/postal/issues/2889)) ([4d9654d](https://github.com/mudrockdev/postal/commit/4d9654dac47d59c760be96388d0421de74d3e6ac))
+* **versioning:** improve how current version and branch is determined and set ([07c6b31](https://github.com/mudrockdev/postal/commit/07c6b317f2b9dc04b6a8c88df1e6aa9e54597504))
+
+
+### Tests
+
+* add tests for the legacy API ([3d208d6](https://github.com/mudrockdev/postal/commit/3d208d632f4fc8a4adbfdb2bf4b377271eae6692))
+* **smtp-sender:** add more tests for AUTH LOGIN ([22dcd49](https://github.com/mudrockdev/postal/commit/22dcd4901f188915cf4b3c758c6f2fc637a4e1e3))
+
 ## [3.0.0](https://github.com/mudrockdev/postal/compare/v3.3.5...3.0.0) (2025-06-17)
 
 
