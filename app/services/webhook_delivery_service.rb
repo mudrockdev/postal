@@ -26,17 +26,26 @@ class WebhookDeliveryService
   private
 
   def generate_payload
-    @payload = case @webhook.output_style
-                when 'listmonk'
-                 generate_listmonk_payload.to_json
-               else
-                 generate_postal_payload.to_json
-               end
+    case @webhook.output_style
+    when "listmonk"
+      payload_data = generate_listmonk_payload
+      if payload_data.nil?
+        raise Postal::Error, "Unsupported event '#{@webhook_request.event}' for output style 'listmonk'"
+      end
+      @payload = payload_data.to_json
+    else
+      @payload = {
+        event: @webhook_request.event,
+        timestamp: @webhook_request.created_at.to_f,
+        payload: @webhook_request.payload,
+        uuid: @webhook_request.uuid
+      }.to_json
+    end
   end
 
   def send_request
     options = {
-      sign: true,
+      sign: false,
       json: @payload,
       timeout: 5
     }
@@ -99,38 +108,24 @@ class WebhookDeliveryService
     @webhook_request.destroy!
   end
 
-  def generate_postal_payload
-    {
-      event: @webhook_request.event,
-      timestamp: @webhook_request.created_at.to_f,
-      payload: @webhook_request.payload,
-      uuid: @webhook_request.uuid
-    }
-  end
-
   def generate_listmonk_payload
     case @webhook_request.event
     when "MessageBounced"
-      generate_listmonk_bounce_payload
+      payload_data = @webhook_request.payload
+      bounce_data = payload_data[:bounce] || payload_data["bounce"]
+      original_data = payload_data[:original_message] || payload_data["original_message"]
+
+      bounce_type = bounce_data[:bounce_type] || bounce_data["bounce_type"]
+      email = original_data[:to] || original_data["to"]
+
+      {
+        email: email,
+        source: "postal",
+        type: bounce_type == "soft" ? "soft" : "hard"
+      }
     else
-      # Fallback to postal format for unsupported events
-      generate_postal_payload
+      nil
     end
-  end
-
-  def generate_listmonk_bounce_payload
-    payload_data = @webhook_request.payload
-    bounce_data = payload_data[:bounce] || payload_data["bounce"]
-    original_data = payload_data[:original_message] || payload_data["original_message"]
-
-    bounce_type = bounce_data[:bounce_type] || bounce_data["bounce_type"]
-    email = original_data[:to] || original_data["to"]
-
-    {
-      email: email,
-      source: "postal",
-      type: bounce_type == "soft" ? "soft" : "hard"
-    }
   end
 
   def logger
