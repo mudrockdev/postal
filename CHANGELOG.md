@@ -2,6 +2,13 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [3.4.0](https://github.com/mudrockdev/postal/compare/3.3.5...3.4.0) (2025-06-20)
+
+
+### Features
+
+* trigger build ([7b61ec7](https://github.com/mudrockdev/postal/commit/7b61ec71879cc83c2b2ac79897b7ef47d3df4efc))
+
 ## [3.3.5](https://github.com/mudrockdev/postal/compare/3.3.4...3.3.5) (2025-06-20)
 
 
