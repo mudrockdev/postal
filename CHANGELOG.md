@@ -2,6 +2,27 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [3.3.5](https://github.com/mudrockdev/postal/compare/3.3.4...3.3.5) (2025-06-20)
+
+
+### Bug Fixes
+
+* oidc scopes are invalid when concatenated ([#3332](https://github.com/mudrockdev/postal/issues/3332)) ([9c5f96a](https://github.com/mudrockdev/postal/commit/9c5f96ae90cf06dcd5db776806865752f667bd95))
+* typo in the credentials page ([fd3c7cc](https://github.com/mudrockdev/postal/commit/fd3c7ccdf6dc4ee0a76c9523cbd735159e4b8000))
+
+
+### Miscellaneous Chores
+
+* **main:** release 3.0.0 ([559712b](https://github.com/mudrockdev/postal/commit/559712bbe45143b7aa941f14b0cfc87c8ce9ef4e))
+* **main:** release 3.1.0 ([4b36f4d](https://github.com/mudrockdev/postal/commit/4b36f4d89f6c5666d4fcc8e8c3af51376f8ee4d1))
+* **main:** release 3.2.0 ([de647a4](https://github.com/mudrockdev/postal/commit/de647a4607e4a8e42e192ad28a55ff9602d7d3b9))
+* **main:** release 3.3.0 ([17d9b7d](https://github.com/mudrockdev/postal/commit/17d9b7d25141c0528884c8d2bf839e9c2d363471))
+* **main:** release 3.3.1 ([34cdd49](https://github.com/mudrockdev/postal/commit/34cdd4947a5a85a9e7551b1d7f733bca58390401))
+* **main:** release 3.3.2 ([dae9850](https://github.com/mudrockdev/postal/commit/dae9850e2ce26f8b04329ab28aeef43c148e7d50))
+* **main:** release 3.3.3 ([c21048f](https://github.com/mudrockdev/postal/commit/c21048fc94d61222bb54a48b817262fc4b700b96))
+* **main:** release 3.3.4 ([4541ab3](https://github.com/mudrockdev/postal/commit/4541ab30401a1cd4e51a8add877025a5f1845e7a))
+* **main:** release 3.3.5 ([5df480a](https://github.com/mudrockdev/postal/commit/5df480a0daf6a5e02a3f2f3344adeb7b7c149c77))
+
 ## [3.3.4](https://github.com/mudrockdev/postal/compare/3.3.3...3.3.4) (2025-06-20)
 
 
