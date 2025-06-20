@@ -2,6 +2,36 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [3.3.2](https://github.com/mudrockdev/postal/compare/3.3.1...3.3.2) (2025-06-20)
+
+
+### Bug Fixes
+
+* fix `postal version` command ([4fa88ac](https://github.com/mudrockdev/postal/commit/4fa88acea0dececd0eae485506a2ad8268fbea59))
+* fix issue running message pruning task ([3a33e53](https://github.com/mudrockdev/postal/commit/3a33e53d843584757bb00898746aa059d7616db4))
+* **legacy-api:** allow _expansions to be provided as true to return all expansions ([39f704c](https://github.com/mudrockdev/postal/commit/39f704c256fc3e71a1dc009acc77796a1efffead)), closes [#2932](https://github.com/mudrockdev/postal/issues/2932)
+* oidc scopes are invalid when concatenated ([#3332](https://github.com/mudrockdev/postal/issues/3332)) ([9c5f96a](https://github.com/mudrockdev/postal/commit/9c5f96ae90cf06dcd5db776806865752f667bd95))
+* raise NotImplementedError when no call method on a scheduled task ([2b0919c](https://github.com/mudrockdev/postal/commit/2b0919c1454eabea93db96f50ecbd8e36bb89f1f))
+* typo in the credentials page ([fd3c7cc](https://github.com/mudrockdev/postal/commit/fd3c7ccdf6dc4ee0a76c9523cbd735159e4b8000))
+
+
+### Miscellaneous Chores
+
+* **main:** release 3.0.0 ([559712b](https://github.com/mudrockdev/postal/commit/559712bbe45143b7aa941f14b0cfc87c8ce9ef4e))
+* **main:** release 3.1.0 ([4b36f4d](https://github.com/mudrockdev/postal/commit/4b36f4d89f6c5666d4fcc8e8c3af51376f8ee4d1))
+* **main:** release 3.2.0 ([de647a4](https://github.com/mudrockdev/postal/commit/de647a4607e4a8e42e192ad28a55ff9602d7d3b9))
+* **main:** release 3.3.0 ([17d9b7d](https://github.com/mudrockdev/postal/commit/17d9b7d25141c0528884c8d2bf839e9c2d363471))
+* **main:** release 3.3.1 ([34cdd49](https://github.com/mudrockdev/postal/commit/34cdd4947a5a85a9e7551b1d7f733bca58390401))
+* **main:** release 3.3.2 ([#2892](https://github.com/mudrockdev/postal/issues/2892)) ([c12f30e](https://github.com/mudrockdev/postal/commit/c12f30e300bba70e36eb196aa63af0f02d48a0af))
+* **main:** release 3.3.3 ([#2933](https://github.com/mudrockdev/postal/issues/2933)) ([d510499](https://github.com/mudrockdev/postal/commit/d5104991903d42563c6c6f7ff01276d496e3304f))
+* **main:** release 3.3.4 ([#3014](https://github.com/mudrockdev/postal/issues/3014)) ([da90e75](https://github.com/mudrockdev/postal/commit/da90e75036c27482699921613d838f4058a100e7))
+* **main:** release 3.3.5 ([5df480a](https://github.com/mudrockdev/postal/commit/5df480a0daf6a5e02a3f2f3344adeb7b7c149c77))
+
+
+### Code Refactoring
+
+* **versioning:** improve how current version and branch is determined and set ([07c6b31](https://github.com/mudrockdev/postal/commit/07c6b317f2b9dc04b6a8c88df1e6aa9e54597504))
+
 ## [3.3.1](https://github.com/mudrockdev/postal/compare/3.3.0...3.3.1) (2025-06-20)
 
 
