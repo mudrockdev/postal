@@ -2,6 +2,13 @@
 
 This file contains all the latest changes and updates to Postal.
 
+## [3.4.1](https://github.com/mudrockdev/postal/compare/3.4.0...3.4.1) (2025-12-18)
+
+
+### Miscellaneous Chores
+
+* upgrade to rails 7.1 and ruby 3.4 ([#3457](https://github.com/mudrockdev/postal/issues/3457)) ([5ae0cbe](https://github.com/mudrockdev/postal/commit/5ae0cbe38d8ef97c9d5a90172353e635ec7f8bc1))
+
 ## [3.4.0](https://github.com/mudrockdev/postal/compare/3.3.5...3.4.0) (2025-06-20)
 
 
